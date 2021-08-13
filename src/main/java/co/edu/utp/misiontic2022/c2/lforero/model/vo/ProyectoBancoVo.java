@@ -1,57 +1,56 @@
 package co.edu.utp.misiontic2022.c2.lforero.model.vo;
 
 public class ProyectoBancoVo {
+    private Integer id;
+    private String constructora;
     private String ciudad;
     private String clasificacion;
-    private Integer total;
-    private String viejo;
-    private String reciente;
-
+    private Integer estrato;
+    private String lider;
+    
+    public Integer getId() {
+        return id;
+    }
+    public void setId(Integer id) {
+        this.id = id;
+    }
+    public String getConstructora() {
+        return constructora;
+    }
+    public void setConstructora(String constructora) {
+        this.constructora = constructora;
+    }
     public String getCiudad() {
         return ciudad;
     }
-
     public void setCiudad(String ciudad) {
         this.ciudad = ciudad;
     }
-
     public String getClasificacion() {
         return clasificacion;
     }
-
     public void setClasificacion(String clasificacion) {
         this.clasificacion = clasificacion;
     }
-
-    public Integer getTotal() {
-        return total;
+    public Integer getEstrato() {
+        return estrato;
     }
-
-    public void setTotal(Integer total) {
-        this.total = total;
+    public void setEstrato(Integer estrato) {
+        this.estrato = estrato;
     }
-
-    public String getViejo() {
-        return viejo;
+    public String getLider() {
+        return lider;
     }
-
-    public void setViejo(String viejo) {
-        this.viejo = viejo;
+    public void setLider(String lider) {
+        this.lider = lider;
     }
-
-    public String getReciente() {
-        return reciente;
-    }
-
-    public void setReciente(String reciente) {
-        this.reciente = reciente;
-    }
-
+    
     @Override
     public String toString() {
-        return "ProyectoBancoVo [ciudad=" + ciudad + ", clasificacion=" + clasificacion + ", reciente=" + reciente
-                + ", total=" + total + ", viejo=" + viejo + "]";
+        return "ProyectoBancoVo [ciudad=" + ciudad + ", clasificacion=" + clasificacion + ", constructora="
+                + constructora + ", estrato=" + estrato + ", id=" + id + ", lider=" + lider + "]";
     }
 
     
+
 }

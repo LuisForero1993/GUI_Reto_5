@@ -10,7 +10,9 @@ public class App
     {   
         var view = new ReportesView();
         view.imprimirProyectosSinCasaCampestreNiCondominio();
-
+        var ReportesView = new ReportesView();
+        var banco = "Conavi";
+        ReportesView.proyectosFinanciadosPorBanco(banco);
 
 
 
