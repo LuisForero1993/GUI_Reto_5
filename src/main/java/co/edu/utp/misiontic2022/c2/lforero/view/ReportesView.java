@@ -4,6 +4,7 @@ import java.sql.SQLException;
 
 import co.edu.utp.misiontic2022.c2.lforero.controller.ReportesController;
 import co.edu.utp.misiontic2022.c2.lforero.model.vo.ComprasDeLiderVo;
+import co.edu.utp.misiontic2022.c2.lforero.model.vo.DeudasPorProyectoVo;
 import co.edu.utp.misiontic2022.c2.lforero.model.vo.ProyectoBancoVo;
 import co.edu.utp.misiontic2022.c2.lforero.model.vo.ProyectoVo;
 
@@ -59,6 +60,27 @@ public class ReportesView {
             }
     }
 
+    public void totalAdeudadoPorProyectosSuperioresALimite(Double limiteInferior) { 
+        try{
+            System.out.println(repitaCaracter('=', 1) 
+            + " TOTAL DEUDAS POR PROYECTO " 
+            + repitaCaracter('=', 1)); 
+            if (limiteInferior != null) { 
+                System.out.println(String.format("%3s %15s", "ID", "VALOR ")); 
+                System.out.println(repitaCaracter('-', 29)); 
+                
+                var lista = controller.listarDeudasPorProyecto(limiteInferior);
+                for (DeudasPorProyectoVo proyecto : lista){
+                    System.out.printf("%3d %,15.1f %n", proyecto.getId(), proyecto.getValor());
+                    }
+                }
+            }catch (SQLException e){
+                System.err.println("Error: " + e);
+                e.printStackTrace();
+                }
+        
+    }
+    
     public void lideresQueMasGastan() { 
         try{
         System.out.println(repitaCaracter('=', 6) 
@@ -76,5 +98,6 @@ public class ReportesView {
             e.printStackTrace();
             }
     } 
+
 
 }

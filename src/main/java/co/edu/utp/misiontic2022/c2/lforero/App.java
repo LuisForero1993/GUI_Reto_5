@@ -17,7 +17,10 @@ public class App
 
         var reportesView2 = new ReportesView();
         reportesView2. lideresQueMasGastan();
-
+        
+        var reportesView3 = new ReportesView();
+        var limiteInferior = 50_000d;
+        reportesView3.totalAdeudadoPorProyectosSuperioresALimite(limiteInferior);
 
 
 
