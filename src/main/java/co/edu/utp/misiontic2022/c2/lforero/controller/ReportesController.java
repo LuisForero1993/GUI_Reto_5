@@ -14,21 +14,21 @@ import co.edu.utp.misiontic2022.c2.lforero.model.vo.ProyectoVo;
 
 public class ReportesController {
 
-    private ProyectoDao proyectoDao;
+    //private ProyectoDao proyectoDao;
     private ProyectoBancoDao proyectoBancoDao;
     private ComprasDeLiderDao comprasDeLiderDao;
     private DeudasPorProyectoDao deudasPorProyectoDao;
     
     public ReportesController(){
-        proyectoDao = new ProyectoDao();
+        //proyectoDao = new ProyectoDao();
         proyectoBancoDao = new ProyectoBancoDao();
         comprasDeLiderDao = new ComprasDeLiderDao();
         deudasPorProyectoDao = new DeudasPorProyectoDao();
     }
 
-    public List<ProyectoVo> listarProyectosExcluyendoClasificaciones(String clasificacion1, String clasificacion2) throws SQLException{
+    /*public List<ProyectoVo> listarProyectosExcluyendoClasificaciones(String clasificacion1, String clasificacion2) throws SQLException{
         return proyectoDao.listarProyectos(clasificacion1, clasificacion2);
-    }
+    }*/
 
     public List<ProyectoBancoVo> listarProyectosFinanciadosPorBanco(String banco) throws SQLException{
         return proyectoBancoDao.listarProyectosFinanciadosPorBanco(banco);

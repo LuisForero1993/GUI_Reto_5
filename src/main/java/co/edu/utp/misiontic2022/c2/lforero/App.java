@@ -8,8 +8,8 @@ public class App
 {
     public static void main( String[] args ) throws SQLException
     {   
-        var view = new ReportesView();
-        view.imprimirProyectosSinCasaCampestreNiCondominio();
+        //var view = new ReportesView();
+        //view.imprimirProyectosSinCasaCampestreNiCondominio();
         
         var ReportesView = new ReportesView();
         var banco = "Conavi";

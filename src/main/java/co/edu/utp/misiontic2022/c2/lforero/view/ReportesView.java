@@ -22,7 +22,7 @@ public class ReportesView {
         } return respuesta; 
     }
     
-    public void imprimirProyectosSinCasaCampestreNiCondominio() throws SQLException{
+    /*public void imprimirProyectosSinCasaCampestreNiCondominio() throws SQLException{
         
         try{
             System.out.println(repitaCaracter('=', 5) + " LISTADO DE PROYECTOS SIN CASA CAMPESTRE NI CONDOMINIO " + repitaCaracter('=', 5));
@@ -37,9 +37,9 @@ public class ReportesView {
             System.err.println("Error: " + e);
             e.printStackTrace();
             }
-    }
+    }*/
 
-    public void proyectosFinanciadosPorBanco(String banco) throws SQLException { 
+    public void proyectosFinanciadosPorBanco(String banco) { 
         try{
             System.out.println(repitaCaracter('=', 36) 
             + " LISTADO DE PROYECTOS POR BANCO " 
@@ -48,7 +48,6 @@ public class ReportesView {
                 System.out.println(String.format("%3s %-25s %-20s %-15s %-7s %-30s", 
                 "ID", "CONSTRUCTORA", "CIUDAD", "CLASIFICACION", "ESTRATO", "LIDER")); 
                 System.out.println(repitaCaracter('-', 105)); 
-                // TODO Imprimir en pantalla la información del proyecto 
                 var lista = controller.listarProyectosFinanciadosPorBanco(banco);
                 for (ProyectoBancoVo proyecto : lista){
                     System.out.printf("%3d %-25s %-20s %-15s %7d %-30s %n", proyecto.getId(), proyecto.getConstructora(), proyecto.getCiudad(), proyecto.getClasificacion(), proyecto.getEstrato(), proyecto.getLider());
@@ -66,7 +65,7 @@ public class ReportesView {
             + " TOTAL DEUDAS POR PROYECTO " 
             + repitaCaracter('=', 1)); 
             if (limiteInferior != null) { 
-                System.out.println(String.format("%3s %15s", "ID", "VALOR ")); 
+                System.out.println(String.format("%3s %15s", "ID", "VALOR  ")); 
                 System.out.println(repitaCaracter('-', 29)); 
                 
                 var lista = controller.listarDeudasPorProyecto(limiteInferior);
@@ -86,9 +85,8 @@ public class ReportesView {
         System.out.println(repitaCaracter('=', 6) 
         + " 10 LIDERES MAS COMPRADORES " 
         + repitaCaracter('=', 7)); 
-        System.out.println(String.format("%-25s %15s", "LIDER", "VALOR ")); 
+        System.out.println(String.format("%-25s %15s", "LIDER", "VALOR  ")); 
         System.out.println(repitaCaracter('-', 41));
-        // TODO Imprimir en pantalla la información de los líderes 
         var lista = controller.listarComprasDeLider();
                 for (ComprasDeLiderVo proyecto : lista){
                     System.out.printf("%-25s %,15.1f %n", proyecto.getLider(), proyecto.getValor());
