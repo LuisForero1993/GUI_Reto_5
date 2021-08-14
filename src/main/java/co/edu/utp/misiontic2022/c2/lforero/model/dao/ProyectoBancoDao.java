@@ -18,11 +18,6 @@ public class ProyectoBancoDao {
         ResultSet rset = null;
 
         try {
-            /*var query = "SELECT ciudad, Clasificacion, COUNT(*) TOTAL, MIN(Fecha_Inicio) VIEJO, MAX(Fecha_Inicio) RECIENTE"
-                + " FROM Proyecto p"
-                + " WHERE Clasificacion NOT IN (?, ?)"
-                + " GROUP BY Ciudad, Clasificacion"
-                + " ORDER BY Ciudad, Clasificacion";*/
             var query = "SELECT p.ID_Proyecto ID, p.Constructora, p.Ciudad, p.Clasificacion, t.Estrato, l.Nombre ||' '|| l.Primer_Apellido ||' '|| l.Segundo_Apellido LIDER"
                 + " FROM Proyecto p "
                 + " join Tipo t ON (P.ID_Tipo=t.ID_Tipo)"

@@ -3,6 +3,7 @@ package co.edu.utp.misiontic2022.c2.lforero.view;
 import java.sql.SQLException;
 
 import co.edu.utp.misiontic2022.c2.lforero.controller.ReportesController;
+import co.edu.utp.misiontic2022.c2.lforero.model.vo.ComprasDeLiderVo;
 import co.edu.utp.misiontic2022.c2.lforero.model.vo.ProyectoBancoVo;
 import co.edu.utp.misiontic2022.c2.lforero.model.vo.ProyectoVo;
 
@@ -57,4 +58,23 @@ public class ReportesView {
             e.printStackTrace();
             }
     }
+
+    public void lideresQueMasGastan() { 
+        try{
+        System.out.println(repitaCaracter('=', 6) 
+        + " 10 LIDERES MAS COMPRADORES " 
+        + repitaCaracter('=', 7)); 
+        System.out.println(String.format("%-25s %15s", "LIDER", "VALOR ")); 
+        System.out.println(repitaCaracter('-', 41));
+        // TODO Imprimir en pantalla la información de los líderes 
+        var lista = controller.listarComprasDeLider();
+                for (ComprasDeLiderVo proyecto : lista){
+                    System.out.printf("%-25s %,15.1f %n", proyecto.getLider(), proyecto.getValor());
+                }            
+        }catch(SQLException e){
+            System.err.println("Error: " + e);
+            e.printStackTrace();
+            }
+    } 
+
 }
