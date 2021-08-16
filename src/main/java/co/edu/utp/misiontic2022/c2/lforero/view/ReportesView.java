@@ -80,14 +80,14 @@ public class ReportesView {
         
     }
     
-    public void lideresQueMasGastan() { 
+    public void lideresQueMasGastan(Integer top) { 
         try{
         System.out.println(repitaCaracter('=', 6) 
         + " 10 LIDERES MAS COMPRADORES " 
         + repitaCaracter('=', 7)); 
         System.out.println(String.format("%-25s %15s", "LIDER", "VALOR  ")); 
         System.out.println(repitaCaracter('-', 41));
-        var lista = controller.listarComprasDeLider();
+        var lista = controller.listarComprasDeLider(top);
                 for (ComprasDeLiderVo proyecto : lista){
                     System.out.printf("%-25s %,15.1f %n", proyecto.getLider(), proyecto.getValor());
                 }            

@@ -10,7 +10,7 @@ import co.edu.utp.misiontic2022.c2.lforero.model.vo.ComprasDeLiderVo;
 import co.edu.utp.misiontic2022.c2.lforero.util.JDBCUtilities;
 
 public class ComprasDeLiderDao {
-    public List<ComprasDeLiderVo> listarComprasDeLider() throws SQLException{
+    public List<ComprasDeLiderVo> listarComprasDeLider(Integer top) throws SQLException{
         List<ComprasDeLiderVo> respuesta = new ArrayList<>();
         var conn = JDBCUtilities.getConnection();
         PreparedStatement stmt = null;
@@ -30,10 +30,10 @@ public class ComprasDeLiderDao {
             + " JOIN MaterialConstruccion mc on (c.ID_MaterialConstruccion = mc.ID_MaterialConstruccion)"
             + " GROUP BY Lider"
             + " ORDER BY VALOR DESC"
-            + " LIMIT 10";
+            + " LIMIT (?)";
 
             stmt = conn.prepareStatement(query);
-            //stmt.setString(1, banco);
+            stmt.setInt(1, top);
             rset = stmt.executeQuery();
 
             while(rset.next()){
